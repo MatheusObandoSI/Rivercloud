@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "585511246848",
+    "project_id": "rivercloud-334205",
+    "storage_bucket": "rivercloud-334205.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:585511246848:android:87bbc229710cdcfc87cce5",
+        "android_client_info": {
+          "package_name": "com.rivercloud.rivercloud"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "585511246848-avu326ukptf6f9g8closm0lbfqkqfofc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rivercloud.rivercloud",
+            "certificate_hash": "2aea61ae434c0b9d233f481ed48e34a196274940"
+          }
+        },
+        {
+          "client_id": "585511246848-2hlis56rd9dg45cqvhbrnfv432h2018b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5OHhCjuDkMDBYrYSWE9qbOi1TZZnjALg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "585511246848-2hlis56rd9dg45cqvhbrnfv432h2018b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
