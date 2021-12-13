@@ -13,7 +13,7 @@ import 'package:rivercloud/cloud_storage_interface/cloud_storage.dart';
 import 'package:rivercloud/ui/drive_home_page.dart';
 
 // Google Drive API credentials data
-const _clientId = "585511246848-avu326ukptf6f9g8closm0lbfqkqfofc.apps.googleusercontent.com";
+const _clientId = "585511246848-2hlis56rd9dg45cqvhbrnfv432h2018b.apps.googleusercontent.com";
 const _scopes = [ga.DriveApi.driveFileScope, ga.DriveApi.driveScope];
 
 class GoogleDrive implements CloudStorageFunctions {
