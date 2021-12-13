@@ -40,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     SizedBox(height: 20),
                     Text(
-                      'FlutterFire',
+                      'Rivercloud',
                       style: TextStyle(
                         color: CustomColors.firebaseYellow,
                         fontSize: 40,
