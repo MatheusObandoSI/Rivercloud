@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:rivercloud/google/google_drive.dart';
+import 'package:rivercloud/google/google_auth.dart';
 import 'package:rivercloud/ui/drive_home_page.dart';
 
 class GoogleSignInButton extends StatefulWidget {
@@ -33,7 +33,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                   _isSigningIn = true;
                 });
 
-                User? user = await GoogleDrive.signInWithGoogle(context: context);
+                User? user = await GoogleAuth.signInWithGoogle(context: context);
 
                 setState(() {
                   _isSigningIn = false;

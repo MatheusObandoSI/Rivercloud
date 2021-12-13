@@ -1,11 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:rivercloud/google/google_drive.dart';
+import 'package:rivercloud/google/google_auth.dart';
 import 'package:rivercloud/ui/style/style.dart';
 import 'package:rivercloud/ui/widgets/app_bar_title.dart';
 
 import 'login.dart';
-//List user google drive directory
+
+// Must List user google drive directory
 
 class DriveHomePage extends StatefulWidget {
   const DriveHomePage({Key? key, required User user})
@@ -144,14 +145,14 @@ class _UserInfoScreenState extends State<DriveHomePage> {
                   setState(() {
                     _isSigningOut = true;
                   });
-                  await GoogleDrive.signOut(context: context);
+                  await GoogleAuth.signOut(context: context);
                   setState(() {
                     _isSigningOut = false;
                   });
                   Navigator.of(context)
                       .pushReplacement(_routeToSignInScreen());
                 },
-                child: Padding(
+                child: const Padding(
                   padding: EdgeInsets.only(top: 8.0, bottom: 8.0),
                   child: Text(
                     'Sign Out',
@@ -171,24 +172,3 @@ class _UserInfoScreenState extends State<DriveHomePage> {
     );
   }
 }
-
-
-// //TODO: Make a CRUD control over user drive files and folders (google_drive.dart)
-//
-// class DriveHomePage extends StatefulWidget {
-//   DriveHomePage({Key? key}) : super(key: key);
-//
-//   @override
-//   _HomePageState createState() => _HomePageState();
-// }
-//
-// class _HomePageState extends State<DriveHomePage> {
-//
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     final GoogleDrive gDrive = GoogleDrive();
-//     gDrive.listFiles();
-//     return Container();
-//   }
-// }

@@ -16,7 +16,7 @@ import 'package:rivercloud/ui/drive_home_page.dart';
 const _clientId = "585511246848-2hlis56rd9dg45cqvhbrnfv432h2018b.apps.googleusercontent.com";
 const _scopes = [ga.DriveApi.driveFileScope, ga.DriveApi.driveScope];
 
-class GoogleDrive implements CloudStorageFunctions {
+class GoogleAuth {
 
   static Future<FirebaseApp> initializeFirebase({required BuildContext context}) async {
     FirebaseApp firebaseApp = await Firebase.initializeApp();
@@ -49,11 +49,6 @@ class GoogleDrive implements CloudStorageFunctions {
   }
 
   static Future<User?> signInWithGoogle({required BuildContext context}) async {
-    // Future<http.Client?> getHttpClient() async {
-    // final GoogleSignIn _googleSignIn = GoogleSignIn(scopes: _scopes, clientId: _clientId);
-    // var httpClient = (await _googleSignIn.authenticatedClient())!;
-    // return httpClient;
-
 
     FirebaseAuth auth = FirebaseAuth.instance;
     User? user;
@@ -81,14 +76,14 @@ class GoogleDrive implements CloudStorageFunctions {
       } on FirebaseAuthException catch (e) {
         if (e.code == 'account-exists-with-different-credential') {
           ScaffoldMessenger.of(context).showSnackBar(
-            GoogleDrive.customSnackBar(
+            GoogleAuth.customSnackBar(
               content:
               'The account already exists with a different credential.',
             ),
           );
         } else if (e.code == 'invalid-credential') {
           ScaffoldMessenger.of(context).showSnackBar(
-            GoogleDrive.customSnackBar(
+            GoogleAuth.customSnackBar(
               content:
               'Error occurred while accessing credentials. Try again.',
             ),
@@ -96,7 +91,7 @@ class GoogleDrive implements CloudStorageFunctions {
         }
       } catch (e) {
         ScaffoldMessenger.of(context).showSnackBar(
-          GoogleDrive.customSnackBar(
+          GoogleAuth.customSnackBar(
             content: 'Error occurred using Google Sign-In. Try again.',
           ),
         );
@@ -111,7 +106,7 @@ class GoogleDrive implements CloudStorageFunctions {
       await FirebaseAuth.instance.signOut();
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
-          GoogleDrive.customSnackBar(
+        GoogleAuth.customSnackBar(
             content: 'Error signing out. Try again.',
           ),
       );
@@ -127,37 +122,26 @@ class GoogleDrive implements CloudStorageFunctions {
     // var response = await drive.files.create(ga.File()..name = p.basename(file.absolute.path),
     //   uploadMedia: ga.Media(file.openRead(), file.lengthSync()));
     //   print(response.toJson());
+
+    User user;
   }
 
   //List Files
   @override
   Future listFiles() async {
-    // print("List");
-    // var client = await getHttpClient();
-    // var drive = ga.DriveApi(client);
-    // var response = await drive.files.list();
-    // print(response.toJson());
+
   }
 
   //DownloadFile
   @override
   Future downloadFile(File file) async {
-    // var client = await getHttpClient();
-    // var drive = ga.DriveApi(client);
-    //
-    // var response = await drive.files.list();
-    // return response.toJson();
+
   }
 
   //Remove File
   @override
   Future removeFile(File file) async {
-    // var client = await getHttpClient();
-    // var drive = ga.DriveApi(client);
-    //
-    // var response = await drive.files.create(ga.File()..name = p.basename(file.absolute.path),
-    //     uploadMedia: ga.Media(file.openRead(), file.lengthSync()));
-    // print(response.toJson());
+
   }
 
 }
